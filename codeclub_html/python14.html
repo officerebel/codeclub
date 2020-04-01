@@ -66,26 +66,39 @@
             <div class="col-xs-1" ">
             </div>
             <div class="col-sm-4 ">
-                <h1>Cirkels in Turtle</h1>
-                <p>Nu gebruiken we de for loop en de range weer</p>
+                <h1>QUIZ</h1>We maken nu een quiz</p>
                 Voer deze code maar eens in.
                 <p><pre><code>
-import turtle
+#Quiz
+a=input("Is python code de naam van een slang? ja of nee? ")
+if a=="nee ":
+    print("goed zo! ")
 
-t = turtle.Turtle()
-for i in range(100):
-    t.circle(10+i, 45)</pre></code>
 
-                </p>
-                   
-                    <p>Kan je zien wat er gebeurt?</p>
-                    <p>45 hebben we toegevoegd en daardoor onstaat een spiraal</p>
-                    <p>                <p><pre><code>
-import turtle
 
-t = turtle.Turtle()
-for i in range(100):
-    t.circle(10+i)</pre></code>
+questions = {
+    "Hoe heet de bibliotheek? ":['a. stadhuis', 'b. stafkamer', 'c. biep', 'd. Stadkamer','d'],
+    "How loud is a sonic boom? ":['a. 160dB', 'b. 175dB', 'c. 157dB', 'd. 213dB', 'd']
+} # 1
+
+score = 0 # 2 
+for question_number,question in enumerate(questions): # 3
+    print ("Vraag ",question_number+1) # 4
+    print (question)
+    for options in questions[question][:-1]: # 5
+        print (options)
+    user_choice = input("Maak je keuze: ")
+    if user_choice == questions[question][-1]: # 6
+        print ("Correct! ")
+        score += 1 #7 here's the relevant part of the question
+    else: # 8
+        print ("onjuist! ")
+
+print("je score is ")
+
+print (score) #9
+                    
+</pre></code>
 
 
 
@@ -100,9 +113,9 @@ for i in range(100):
     </div>
 
     <div class="container-fluid ">
-        <div> <a href="python9.html "><button class="btn btn-warning ">Vorige</button></div></a>
+        <div> <a href="python12.html "><button class="btn btn-warning ">Vorige</button></div></a>
 
-        <div style="float: right; "> <a href="ython11.html "><button class="btn btn-warning ">Volgende</button></div></a>
+        <div style="float: right; "> <a href="python1.html "><button class="btn btn-warning ">Volgende</button></div></a>
     </div>
 
     <div row>
