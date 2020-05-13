@@ -66,26 +66,47 @@
             <div class="col-xs-1" ">
             </div>
             <div class="col-sm-4 ">
-                <h1>Cirkels in Turtle</h1>
-                <p>Nu gebruiken we de for loop en de range weer</p>
+                <h1>quiz</h1>
+                <p>we gaan een quiz maken</p>
                 Voer deze code maar eens in.
                 <p><pre><code>
-import turtle
+from question import Question
 
-t = turtle.Turtle()
-for i in range(100):
-    t.circle(10+i, 45)</pre></code>
+question_prompts = [
+
+    "Wat is de kleur van een appel?\n(a) Rood/Groen\n(b) Paars\n(c) Oranje\n\n",
+    "Wat is de kleur van een banaan?\n(a) Zwart\n(b) Magenta\n(c) Geel\n\n",
+    "Wat is de kleur van een aardbei?\n(a) Geel\n(b) Rood\n(c) Blauw\n\n"
+]
+
+questions = [
+
+    Question(question_prompts[0],"a"),
+    Question(question_prompts[1],"c"),
+    Question(question_prompts[2],"b"),
+]
+
+def run_test(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == question.answer:
+            score +=1
+    print("je hebt " + str(score) + "/" + str(len(questions)) + "Goed!")
+
+run_test(questions)
+
 
                 </p>
                    
-                    <p>Kan je zien wat er gebeurt?</p>
-                    <p>45 hebben we toegevoegd en daardoor onstaat een spiraal</p>
+                    <p>Dit is een class</p>
+                    <p>en mag je opslaan als question.py</p>
                     <p>                <p><pre><code>
-import turtle
+class Question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
 
-t = turtle.Turtle()
-for i in range(100):
-    t.circle(10+i)</pre></code>
 
 
 
